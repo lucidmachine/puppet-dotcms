@@ -22,7 +22,7 @@ class dotcms::config(
 
   file { "$root_plugin/bin/startup.sh" :
     ensure  => present,
-    content => template('modules/dotcms/startup.sh.erb'),
+    content => template('dotcms/startup.sh.erb'),
     require => File["$root_plugin/bin"]
   }
 
@@ -40,13 +40,13 @@ class dotcms::config(
 
   file { "$root_plugin/tomcat/conf/Catalina/server.xml" :
     ensure  => present,
-    content => template('modules/dotcms/server.xml.erb'),
+    content => template('dotcms/server.xml.erb'),
     require => File["$root_plugin/tomcat/conf/Catalina"]
   }
 
   file { "$root_plugin/tomcat/conf/Catalina/localhost/ROOT.xml":
     ensure  => present,
-    content => template('module/dotcms/ROOT.xml.erb'),
+    content => template('dotcms/ROOT.xml.erb'),
     require => File["$root_plugin/tomcat/conf/Catalina/localhost"]
   }
 
