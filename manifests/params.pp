@@ -9,6 +9,10 @@ class dotcms::params {
   $postgres_url      = 'jdbc:postgresql://ipsy3-stagefromprod.crekj2abspyf.us-east-1.rds.amazonaws.com:5432/dotcms'
   $postgres_username = 'ipsy'
   $postgres_password = 'ipsytest'
+  $java_home         = '/usr/local/java'
+  $server_path       = '/opt/dotcms/dotserver'
+
+
 
   case $::osfamily {
     'Debian': {

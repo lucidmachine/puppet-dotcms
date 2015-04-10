@@ -18,6 +18,7 @@ class dotcms (
   # validate parameters here
 
   class { '::dotcms::install': } ->
+  class { '::dotcms::plugin': } ->
   class { '::dotcms::config': } ~>
   class { '::dotcms::service': } ->
   Class['::dotcms']
