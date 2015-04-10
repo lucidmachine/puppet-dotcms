@@ -15,7 +15,7 @@ class dotcms::config(
   file { "/etc/init.d/dotcmsd":
     ensure  => present,
     mode    => 0755,
-    content => template('dotcms/dotcmsd.erb')
+    content => template('dotcms/dotcms_initd.erb')
   }
 
 }
