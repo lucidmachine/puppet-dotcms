@@ -12,18 +12,23 @@ class dotcms::params {
       $package_name = 'dotcms'
       $service_name = 'dotcms'
     }
-    'RedHat': {
+    'RedHat', 'Linux': {
       $package_name = 'dotcms'
       $service_name = 'dotcms'
     }
+    default: {
+      fail("${::operatingsystem} not supported")
+    }
+  }
+
+  case $::operatingsystem {
     'Amazon': {
-      $package_name = 'dotcms'
-      $service_name = 'dotcms'
       $root_user    = 'ec2-user'
       $root_group   = 'ec2-user'
     }
     default: {
-      fail("${::operatingsystem} not supported")
+      $root_user    = 'root'
+      $root_group   = 'root'
     }
   }
 }
