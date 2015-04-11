@@ -11,10 +11,8 @@ class dotcms::params {
   $postgres_password = 'ipsytest'
   $java_home         = '/usr/local/java'
   $server_path       = '/opt/dotcms/dotserver'
-  $java_mem_max_size = '1G'
-  $java_mem_perm_size = '250m'
-
-
+  $java_mem_max_size = '2G'
+  $java_mem_perm_size = '4G'
 
   case $::osfamily {
     'Debian': {
