@@ -8,7 +8,8 @@ class dotcms::plugin::config(
   $root_group         = $::dotcms::root_group,
   $java_mem_max_size  = $::dotcms::params::java_mem_max_size,
   $java_mem_perm_size = $::dotcms::params::java_mem_perm_size,
-  $postgres_url       = $::dotcms::postgres_url,
+  $postgres_host      = $::dotcms::postgres_host,
+  $postgres_port      = $::dotcms::postgres_port,
   $postgres_username  = $::dotcms::postgres_username,
   $postgres_password  = $::dotcms::postgres_password,
 ) {

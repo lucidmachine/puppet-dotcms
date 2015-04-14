@@ -16,12 +16,14 @@ class dotcms (
   $root_plugin        = $::dotcms::params::root_plugin,
   $root_user          = $::dotcms::params::root_user,
   $root_group         = $::dotcms::params::root_group,
-  $postgres_url       = $::dotcms::params::postgres_url,
+  $postgres_host      = $::dotcms::params::postgres_host,
+  $postgres_port      = $::dotcms::params::postgres_port,
   $postgres_username  = $::dotcms::params::postgres_username,
   $postgres_password  = $::dotcms::params::postgres_password,
 ) inherits ::dotcms::params {
 
   # validate parameters here
+  validate_re($postgres_host,'^.+$')
 
   class { '::dotcms::install': } ->
   class { '::dotcms::plugin': } ->
