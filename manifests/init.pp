@@ -23,7 +23,7 @@ class dotcms (
 ) inherits ::dotcms::params {
 
   # validate parameters here
-  validate_re($postgres_host,'^.+$')
+  validate_re($postgres_host,'^.+$','The postgres host variable passed is not valid!')
 
   class { '::dotcms::install': } ->
   class { '::dotcms::plugin': } ->
