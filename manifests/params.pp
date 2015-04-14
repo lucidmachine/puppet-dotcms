@@ -6,7 +6,7 @@
 class dotcms::params {
 
   $root_plugin       = '/opt/dotcms/dotserver/plugins/com.dotcms.config/ROOT'
-  $postgres_host     = 'localhost',
+  $postgres_host     = 'localhost'
   $postgres_port     = '5432'
   $postgres_username = 'ipsy'
   $postgres_password = 'ipsytest'
