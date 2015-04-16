@@ -18,8 +18,9 @@ class dotcms::config(
     content => template('dotcms/dotcms_initd.erb')
   }
 
-  file { "$::dotcms::server_path/tomcat/bin/setenv.sh.erb":
+  file { "$::dotcms::server_path/tomcat/bin/setenv.sh":
     ensure  => present,
+    mode    => 0755,
     content => template('dotcms/setenv.sh.erb')
   }
 
