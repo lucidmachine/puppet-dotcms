@@ -4,6 +4,8 @@
 #
 class dotcms::install {
 
+  package { $::dotcms::extra_packages: ensure => present }
+
   #  package { $::dotcms::package_name:
   #  ensure => present,
   #}
