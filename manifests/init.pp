@@ -28,6 +28,8 @@ class dotcms (
   class { '::dotcms::install': } ->
   class { '::dotcms::plugin': } ->
   class { '::dotcms::config': } ~>
-  class { '::dotcms::service': } ->
+  class { '::dotcms::restart': } ->
+  # We would like to create a service in the future instead of a restart class:
+  # class { '::dotcms::service': } ->
   Class['::dotcms']
 }
