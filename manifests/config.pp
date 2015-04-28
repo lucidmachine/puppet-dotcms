@@ -22,10 +22,11 @@ class dotcms::config(
   }
 
   file { $assets_link:
-    ensure        => link,
-    assets_target => $assets_target,
-    backup        => false,
-    force         => true,
+    ensure  => link,
+    target  => $assets_target,
+    backup  => false,
+    force   => true,
+    require => File[$assets_root]
   }
 
   file { "/etc/init.d/dotcmsd":
