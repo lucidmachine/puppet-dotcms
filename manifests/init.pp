@@ -16,7 +16,6 @@ class dotcms (
   $root_plugin        = $::dotcms::params::root_plugin,
   $root_user          = $::dotcms::params::root_user,
   $root_group         = $::dotcms::params::root_group,
-  $assets_root        = $::dotcms::params::assets_root,
   $assets_link        = $::dotcms::params::assets_link,
   $assets_target      = $::dotcms::params::assets_target,
   $postgres_host      = $::dotcms::params::postgres_host,
