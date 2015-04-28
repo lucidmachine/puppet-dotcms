@@ -14,6 +14,9 @@ class dotcms::params {
   $server_path       = '/opt/dotcms/dotserver'
   $java_mem_max_size = '2G'
   $java_mem_perm_size = '4G'
+  $assets_root = '/opt/dotcms/dotserver/dotCMS/assets'
+  $assets_target = '/opt/dotcms/dotserver/dotCMS/assets'
+  $assets_link = '/opt/dotcms/dotserver/dotCMS/assets_noused'
 
   case $::osfamily {
     'Debian': {

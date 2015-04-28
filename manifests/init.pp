@@ -16,10 +16,14 @@ class dotcms (
   $root_plugin        = $::dotcms::params::root_plugin,
   $root_user          = $::dotcms::params::root_user,
   $root_group         = $::dotcms::params::root_group,
+  $assets_root        = $::dotcms::params::assets_root,
+  $assets_link        = $::dotcms::params::assets_link,
+  $assets_target      = $::dotcms::params::assets_target,
   $postgres_host      = $::dotcms::params::postgres_host,
   $postgres_port      = $::dotcms::params::postgres_port,
   $postgres_username  = $::dotcms::params::postgres_username,
   $postgres_password  = $::dotcms::params::postgres_password,
+  $assets_target      = $::dotcms::params::assets_target,
 ) inherits ::dotcms::params {
 
   # validate parameters here
