@@ -13,7 +13,7 @@ class dotcms::params {
   $java_home         = '/usr/local/java'
   $server_path       = '/opt/dotcms/dotserver'
   $java_mem_max_size = '2G'
-  $java_mem_perm_size = '512M'
+  $java_mem_perm_size = '2048m'
   $assets_target = '/opt/dotcms/dotserver/dotCMS/assets'
   $assets_link = '/opt/dotcms/dotserver/dotCMS/assets_noused'
 
