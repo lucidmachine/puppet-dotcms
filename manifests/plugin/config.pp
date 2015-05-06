@@ -12,6 +12,7 @@ class dotcms::plugin::config(
   $postgres_port      = $::dotcms::postgres_port,
   $postgres_username  = $::dotcms::postgres_username,
   $postgres_password  = $::dotcms::postgres_password,
+  $plugin_path        = $::dotcms::plugin_path,
 ) {
 
   File {
@@ -54,6 +55,22 @@ class dotcms::plugin::config(
     ensure  => present,
     content => template('dotcms/ROOT.xml.erb'),
     require => File["$root_plugin/tomcat/conf/Catalina/localhost"]
+  }
+
+  if $cluster == true {
+
+    if ! is_array($cluster_members) {
+      fail "Expect cluster_members as an array: [host1,host2,..,hostn]"
+    }
+    if ! is_array($es_unicast_hosts) {
+      fail "Expect internal ips with elastic search tcp port in an array: ['host1:port1','host2:port2',..,'hostn:portn']"
+    }
+
+    file {"${plugin_path}/conf/dotmarketing-config-ext.properties":
+      ensure  => present,
+      content => template('dotcms/dotmarketing-config-ext.properties.erb')
+    }
+  
   }
 
 }
