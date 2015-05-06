@@ -29,9 +29,10 @@ class dotcms (
   validate_re($postgres_host,'^.+$','The postgres host variable passed is not valid!')
 
   class { '::dotcms::install': } ->
-  class { '::dotcms::plugin': } ->
   class { '::dotcms::config': } ~>
+  class { '::dotcms::reindex': } ->
   class { '::dotcms::restart': } ->
+  class { '::dotcms::plugin': } ->
   # We would like to create a service in the future instead of a restart class:
   # class { '::dotcms::service': } ->
   Class['::dotcms']
