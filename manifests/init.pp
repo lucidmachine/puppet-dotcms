@@ -33,7 +33,7 @@ class dotcms (
   $cache_force_ipv4    = $::dotcms::params::cache_force_ipv4,
   $cache_protocol      = $::dotcms::params::cache_protocol,
   $cache_bind_port     = $::dotcms::params::cache_bind_port,
-  $cache_bind_address  = $::dotcms::params::cache_bin_address,
+  $cache_bind_address  = $::dotcms::params::cache_bind_address,
   $es_cluster_name     = $::dotcms::params::es_cluster_name,
   $es_network_host     = $::dotcms::params::es_network_host,
   $es_transp_tcp_port  = $::dotcms::params::es_transp_tcp_port,
