@@ -21,6 +21,7 @@ class dotcms::params {
   $cluster_members     = undef
   $dist_idx_enabled    = true
   $dist_idx_server_id  = undef
+  $dist_idx_servers_ids  = '1,2'
   $cache_through_db    = false
   $cache_force_ipv4    = true
   $cache_protocol      = 'tcp'

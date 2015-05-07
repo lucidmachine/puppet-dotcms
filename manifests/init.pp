@@ -28,6 +28,7 @@ class dotcms (
   $cluster_members     = $::dotcms::params::cluster_members,
   $dist_idx_enabled    = $::dotcms::params::dist_idx_enabled,
   $dist_idx_server_id  = $::dotcms::params::dist_idx_server_id,
+  $dist_idx_servers_ids = $::dotcms::params::dist_idx_servers_ids,
   $cache_through_db    = $::dotcms::params::cache_through_db,
   $cache_force_ipv4    = $::dotcms::params::cache_force_ipv4,
   $cache_protocol      = $::dotcms::params::cache_protocol,

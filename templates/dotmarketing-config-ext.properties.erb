@@ -8,7 +8,7 @@ DIST_INDEXATION_ENABLED=<%= scope_lookvar('::dotcms::dist_idx_enabled') %>
 DIST_INDEXATION_SERVER_ID=<%= scope_lookvar('::dotcms::dist_idx_server_id') %>
 
 ## comma separated set of ids for all nodes in the cluster, starting with the current server
-DIST_INDEXATION_SERVERS_IDS=<%= scope_lookvar('::dotcms::cluster_members').map{ |value,index| "#{index + 1}" }.join(',') %>
+DIST_INDEXATION_SERVERS_IDS=<%= scope_lookvar('::dotcms::dist_idx_servers_ids') %>
 
 ## CLUSTERED CACHE SETTINGS
 ## If true, cache is persisted to the DB
