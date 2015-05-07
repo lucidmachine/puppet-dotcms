@@ -16,8 +16,6 @@ class dotcms::config(
 
   file { $assets_target: 
     ensure => directory,
-    owner  => $root_user,
-    group  => $root_group,
   }
 
   file { $assets_link:
