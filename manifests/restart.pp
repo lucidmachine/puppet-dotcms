@@ -8,7 +8,7 @@ class dotcms::restart {
 
   exec { 'Shutting down server for restart':
     command     => "$::dotcms::dotcms_path/bin/shutdown.sh",
-    onlyif      => '/usr/bin/test -e /tmp/dotcms.pid',
+    returns     => [0, 1]
   }
 
   exec { 'Starting up server for restart':

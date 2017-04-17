@@ -8,7 +8,8 @@ class dotcms::plugin::reload{
 
   exec {'Shutting down server':
     command => "${::dotcms::dotcms_path}/bin/shutdown.sh",
-    onlyif      => '/usr/bin/test -e /tmp/dotcms.pid',
+    returns => [0, 1]
+
   }
 
   exec {'Undeploying plugins':
