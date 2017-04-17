@@ -40,7 +40,7 @@ class dotcms::params {
 
   case $::osfamily {
     'Debian': {
-      $extra_packages = ['libapr1.0-dev','libssl-dev']
+      $extra_packages = ['libapr1-dev','libssl-dev']
       $package_name = 'dotcms'
       $service_name = 'dotcms'
     }
