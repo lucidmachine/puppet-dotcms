@@ -23,7 +23,7 @@ class dotcms::plugin::config(
 
   file { $root_plugin : }
 
-  file { [ "$root_plugin/tomcat-8.0.18" , "$root_plugin/bin" ]:
+  file { [ "$root_plugin/dotserver/tomcat-8.0.18" , "$root_plugin/bin" ]:
     require => File[$root_plugin]
   }
 
@@ -33,28 +33,28 @@ class dotcms::plugin::config(
     require => File["$root_plugin/bin"]
   }
 
-  file { "$root_plugin/tomcat-8.0.18/conf" :
-    require => File["$root_plugin/tomcat-8.0.18"]
+  file { "$root_plugin/dotserver/tomcat-8.0.18/conf" :
+    require => File["$root_plugin/dotserver/tomcat-8.0.18"]
   }
 
-  file { "$root_plugin/tomcat-8.0.18/conf/Catalina" :
-    require => File["$root_plugin/tomcat-8.0.18/conf"]
+  file { "$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina" :
+    require => File["$root_plugin/dotserver/tomcat-8.0.18/conf"]
   }
 
-  file { "$root_plugin/tomcat-8.0.18/conf/Catalina/localhost" :
-    require => File["$root_plugin/tomcat-8.0.18/conf/Catalina"]
+  file { "$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina/localhost" :
+    require => File["$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina"]
   }
 
-  file { "$root_plugin/tomcat-8.0.18/conf/Catalina/server.xml" :
+  file { "$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina/server.xml" :
     ensure  => present,
     content => template('dotcms/server.xml.erb'),
-    require => File["$root_plugin/tomcat-8.0.18/conf/Catalina"]
+    require => File["$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina"]
   }
 
-  file { "$root_plugin/tomcat-8.0.18/conf/Catalina/localhost/ROOT.xml":
+  file { "$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina/localhost/ROOT.xml":
     ensure  => present,
     content => template('dotcms/ROOT.xml.erb'),
-    require => File["$root_plugin/tomcat-8.0.18/conf/Catalina/localhost"]
+    require => File["$root_plugin/dotserver/tomcat-8.0.18/conf/Catalina/localhost"]
   }
 
   if $cluster == true {
