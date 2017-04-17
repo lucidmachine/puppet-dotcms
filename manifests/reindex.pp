@@ -2,11 +2,11 @@ class dotcms::reindex {
 
   Exec {
     path => $::path,
-    cwd  => $::dotcms::dotcms_path,
+    cwd  => $::dotcms::application_path,
     refreshonly => true,
   }
 
-  file {"${::dotcms::dotcms_path}/postgres_host":
+  file {"${::dotcms::application_path}/postgres_host":
     ensure  => present,
     content => $::dotcms::postgres_host,
     notify  => Exec['Delete esdata Cache']
@@ -20,12 +20,12 @@ class dotcms::reindex {
 
   exec {'Delete h2db Cache':
     command => "rm -rf ${::dotcms::application_path}/dotsecure/h2db/*",
-    notify  => Exec['execute reindex'],
+    notify  => Exec['Execute Reindex'],
     require => Exec['Delete esdata Cache']
   }
 
   # Start Reindex
-  exec {'execute reindex':
+  exec {'Execute Reindex':
     command => "echo 'no reindex script yet'",
     require => Exec['Delete h2db Cache']
   }

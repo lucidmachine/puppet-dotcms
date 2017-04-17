@@ -11,7 +11,6 @@ class dotcms::params {
   $server_path         = "$::dotcms::params::dotcms_distro_path/dotserver"
   $plugins_path        = "$::dotcms::params::dotcms_distro_path/plugins"
   $config_plugin_path  = "$::dotcms::params::plugins_path/com.dotcms.config"
-  $root_plugin         = "$::dotcms::params::config_plugin_path/ROOT"
   $tomcat_path         = "$::dotcms::params::server_path/tomcat-8.0.18"
   $application_path    = "$::dotcms::params::tomcat_path/webapps/ROOT"
   $assets_target       = "$::dotcms::params::application_path/assets"

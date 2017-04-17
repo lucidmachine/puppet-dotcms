@@ -21,7 +21,6 @@ class dotcms (
   $server_path          = $::dotcms::params::server_path,
   $plugins_path         = $::dotcms::params::plugins_path,
   $config_plugin_path   = $::dotcms::params::config_plugin_path,
-  $root_plugin          = $::dotcms::params::root_plugin,
   $tomcat_path          = $::dotcms::params::tomcat_path,
   $application_path     = $::dotcms::params::application_path,
   $assets_target        = $::dotcms::params::assets_target,
