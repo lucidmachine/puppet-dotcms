@@ -13,6 +13,8 @@ class dotcms (
   $root_user            = $::dotcms::params::root_user,
   $root_group           = $::dotcms::params::root_group,
 
+  $http_connector_port  = $::dotcms::params::http_connector_port,
+
   $dotcms_path          = $::dotcms::params::dotcms_path,
   $server_path          = $::dotcms::params::server_path,
   $plugins_path         = $::dotcms::params::plugins_path,
@@ -31,7 +33,7 @@ class dotcms (
   $java_home            = $::dotcms::params::java_home,
   $java_mem_max_size    = $::dotcms::params::java_mem_max_size,
   $java_mem_perm_size   = $::dotcms::params::java_mem_perm_size,
-  
+
   $cluster              = $::dotcms::params::cluster,
   $cluster_members      = $::dotcms::params::cluster_members,
   $dist_idx_enabled     = $::dotcms::params::dist_idx_enabled,

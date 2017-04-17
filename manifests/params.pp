@@ -14,13 +14,18 @@ class dotcms::params {
   $application_path    = "$::dotcms::params::tomcat_path/webapps/ROOT"
   $assets_target       = "$::dotcms::params::application_path/assets"
   $assets_link         = "$::dotcms::params::application_path/assets_noused"
+
+  $http_connector_port = '8080'
+
   $postgres_host       = 'localhost'
   $postgres_port       = '5432'
   $postgres_username   = 'ipsy'
   $postgres_password   = 'ipsytest'
+
   $java_home           = '/usr/local/java'
   $java_mem_max_size   = '2G'
   $java_mem_perm_size  = '2048m'
+
   $cluster             = false
   $cluster_members     = undef
   $dist_idx_enabled    = true
