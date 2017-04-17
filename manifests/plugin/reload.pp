@@ -6,13 +6,14 @@ class dotcms::plugin::reload{
     refreshonly => true,
   }
 
-  exec {'Shuting down server':
+  exec {'Shutting down server':
     command => "${::dotcms::dotcms_path}/bin/shutdown.sh",
+    onlyif      => '/usr/bin/test -e /tmp/dotcms.pid',
   }
 
   exec {'Undeploying plugins':
     command => "${::dotcms::dotcms_path}/bin/undeploy-plugins.sh",
-    require => Exec['Shuting down server']
+    require => Exec['Shutting down server']
   }
 
   exec {'Deploying plugins':

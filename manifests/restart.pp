@@ -1,4 +1,4 @@
-class dotcms::restart{
+class dotcms::restart {
 
   Exec {
     path => $::path,
@@ -6,13 +6,14 @@ class dotcms::restart{
     refreshonly => true,
   }
 
-  exec {'Shuting down server for restart':
+  exec { 'Shutting down server for restart':
     command     => "$::dotcms::dotcms_path/bin/shutdown.sh",
+    onlyif      => '/usr/bin/test -e /tmp/dotcms.pid',
   }
 
-  exec{'Starting up server for restart':
+  exec { 'Starting up server for restart':
     command     => "$dotcms::dotcms_path/bin/startup.sh",
-    require     => Exec['Shuting down server for restart']
+    require     => Exec['Shutting down server for restart']
   }
 
 }
