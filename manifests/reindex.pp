@@ -1,4 +1,4 @@
-class dotcms::reindex{
+class dotcms::reindex {
 
   Exec {
     path => $::path,
@@ -9,25 +9,25 @@ class dotcms::reindex{
   file {"${::dotcms::dotcms_path}/postgres_host":
     ensure  => present,
     content => $::dotcms::postgres_host,
-    notify  => Exec['delete esdata cache']
+    notify  => Exec['Delete esdata Cache']
   }
 
-  #Before reindeing we need to clean up cache:
-  exec {'delete esdata cache':
+  # Before reindexing we need to clean up cache:
+  exec {'Delete esdata Cache':
     command => "rm -rf ${::dotcms::application_path}/dotsecure/esdata/*",
-    notify  => Exec['delete h2db cache']
+    notify  => Exec['Delete h2db Cache']
   }
 
-  exec {'delete h2db cache':
+  exec {'Delete h2db Cache':
     command => "rm -rf ${::dotcms::application_path}/dotsecure/h2db/*",
     notify  => Exec['execute reindex'],
-    require => Exec['delete esdata cache']
+    require => Exec['Delete esdata Cache']
   }
 
   # Start Reindex
   exec {'execute reindex':
     command => "echo 'no reindex script yet'",
-    require => Exec['delete h2db cache']
+    require => Exec['Delete h2db Cache']
   }
 
 }
