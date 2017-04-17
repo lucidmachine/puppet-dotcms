@@ -4,10 +4,12 @@
 # It sets variables according to platform.
 #
 class dotcms::params {
+  $dotcms_version      = "3.7.1"
 
   $dotcms_path         = '/opt/dotcms'
-  $server_path         = "$::dotcms::params::dotcms_path/dotserver"
-  $plugins_path        = "$::dotcms::params::dotcms_path/plugins"
+  $dotcms_distro_path  = "$::dotcms::params::dotcms_path/dotcms_$::dotcms::params::dotcms_version"
+  $server_path         = "$::dotcms::params::dotcms_distro_path/dotserver"
+  $plugins_path        = "$::dotcms::params::dotcms_distro_path/plugins"
   $config_plugin_path  = "$::dotcms::params::plugins_path/com.dotcms.config"
   $root_plugin         = "$::dotcms::params::config_plugin_path/ROOT"
   $tomcat_path         = "$::dotcms::params::server_path/tomcat-8.0.18"
