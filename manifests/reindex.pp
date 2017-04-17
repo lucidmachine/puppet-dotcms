@@ -2,11 +2,11 @@ class dotcms::reindex{
 
   Exec {
     path => $::path,
-    cwd  => $::dotcms::server_path,
+    cwd  => $::dotcms::dotcms_path,
     refreshonly => true,
   }
 
-  file {"${::dotcms::server_path}/postgres_host":
+  file {"${::dotcms::dotcms_path}/postgres_host":
     ensure  => present,
     content => $::dotcms::postgres_host,
     notify  => Exec['delete esdata cache']
@@ -14,12 +14,12 @@ class dotcms::reindex{
 
   #Before reindeing we need to clean up cache:
   exec {'delete esdata cache':
-    command => "rm -rf ${::dotcms::server_path}/dotCMS/dotsecure/esdata/*",
+    command => "rm -rf ${::dotcms::application_path}/dotsecure/esdata/*",
     notify  => Exec['delete h2db cache']
   }
 
   exec {'delete h2db cache':
-    command => "rm -rf ${::dotcms::server_path}/dotCMS/dotsecure/h2db/*",
+    command => "rm -rf ${::dotcms::application_path}/dotsecure/h2db/*",
     notify  => Exec['execute reindex'],
     require => Exec['delete esdata cache']
   }

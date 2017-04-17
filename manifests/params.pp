@@ -5,18 +5,22 @@
 #
 class dotcms::params {
 
-  $plugin_path         = '/opt/dotcms/dotserver/plugins/com.dotcms.config'
-  $root_plugin         = '/opt/dotcms/dotserver/plugins/com.dotcms.config/ROOT'
+  $dotcms_path         = '/opt/dotcms'
+  $server_path         = "$::dotcms::params::dotcms_path/dotserver"
+  $plugins_path        = "$::dotcms::params::dotcms_path/plugins"
+  $config_plugin_path  = "$::dotcms::params::plugins_path/com.dotcms.config"
+  $root_plugin         = "$::dotcms::params::config_plugin_path/ROOT"
+  $tomcat_path         = "$::dotcms::params::server_path/tomcat-8.0.18"
+  $application_path    = "$::dotcms::params::tomcat_path/webapps/ROOT"
+  $assets_target       = "$::dotcms::params::application_path/assets"
+  $assets_link         = "$::dotcms::params::application_path/assets_noused"
   $postgres_host       = 'localhost'
   $postgres_port       = '5432'
   $postgres_username   = 'ipsy'
   $postgres_password   = 'ipsytest'
   $java_home           = '/usr/local/java'
-  $server_path         = '/opt/dotcms/dotserver'
   $java_mem_max_size   = '2G'
   $java_mem_perm_size  = '2048m'
-  $assets_target       = '/opt/dotcms/dotserver/dotCMS/assets'
-  $assets_link         = '/opt/dotcms/dotserver/dotCMS/assets_noused'
   $cluster             = false
   $cluster_members     = undef
   $dist_idx_enabled    = true

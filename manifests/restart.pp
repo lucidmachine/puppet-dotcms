@@ -7,11 +7,11 @@ class dotcms::restart{
   }
 
   exec {'Shuting down server for restart':
-    command     => "$::dotcms::server_path/bin/shutdown.sh",
+    command     => "$::dotcms::dotcms_path/bin/shutdown.sh",
   }
 
   exec{'Starting up server for restart':
-    command     => "$dotcms::server_path/bin/startup.sh",
+    command     => "$dotcms::dotcms_path/bin/startup.sh",
     require     => Exec['Shuting down server for restart']
   }
 
