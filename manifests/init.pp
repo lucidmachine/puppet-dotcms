@@ -18,6 +18,7 @@ class dotcms (
   $http_connector_port  = $::dotcms::params::http_connector_port,
 
   $dotcms_path          = $::dotcms::params::dotcms_path,
+  $dotcms_distro_path   = $::dotcms::params::dotcms_distro_path,
   $server_path          = $::dotcms::params::server_path,
   $plugins_path         = $::dotcms::params::plugins_path,
   $config_plugin_path   = $::dotcms::params::config_plugin_path,

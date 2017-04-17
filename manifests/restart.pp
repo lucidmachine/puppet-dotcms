@@ -7,13 +7,13 @@ class dotcms::restart {
   }
 
   exec { 'Shutting down server for restart':
-    command     => "$::dotcms::dotcms_path/bin/shutdown.sh",
-    returns     => [0, 1]
+    command     => "$::dotcms::dotcms_distro_path/bin/shutdown.sh",
+    onlyif      => 'test -f /tmp/dotcms.pid',
+    notify      => Exec['Starting up server for restart'],
   }
 
   exec { 'Starting up server for restart':
-    command     => "$dotcms::dotcms_path/bin/startup.sh",
-    require     => Exec['Shutting down server for restart']
+    command     => "$dotcms::dotcms_distro_path/bin/startup.sh",
   }
 
 }
