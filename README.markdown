@@ -160,6 +160,7 @@ The maximum permanent generation space size which the JVM running dotCMS may all
     * This module currently only supports System V init.d services.
 * DB - This module currently only configures dotCMS to work with the PostgreSQL database server. dotCMS also supports H2 and MySQL in the dotCMS Community Edition and Microsoft SQL Server and Oracle in dotCMS Enterprise Edition.
 * dotCMS - This module only controls the open-source dotCMS Community Edition. There is no support for dotCMS Enterprise Edition.
+    * Enterprise features including clustering and push publishing cannot be configured via this module.
 * Puppet - This module is only tested using Puppet 3.8.5.
 
 ## Development
