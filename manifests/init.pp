@@ -8,6 +8,7 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class dotcms (
+  $extra_packages       = $::dotcms::params::extra_packages,
   $version              = $::dotcms::params::version,
 
   $service_name         = $::dotcms::params::service_name,

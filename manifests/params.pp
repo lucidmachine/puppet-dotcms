@@ -44,6 +44,8 @@ class dotcms::params {
       $service_name = 'dotcms'
     }
     default: {
+      $extra_packages = undef
+      $service_name = undef
       fail("${::operatingsystem} not supported")
     }
   }

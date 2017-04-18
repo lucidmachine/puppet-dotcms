@@ -6,9 +6,6 @@ class dotcms::plugin::config(
   $plugins_path       = $::dotcms::plugins_path,
   $config_plugin_path = $::dotcms::config_plugin_path,
 
-  $root_user          = $::dotcms::root_user,
-  $root_group         = $::dotcms::root_group,
-
   $java_mem_max_size  = $::dotcms::java_mem_max_size,
   $java_mem_perm_size = $::dotcms::java_mem_perm_size,
 
@@ -39,7 +36,7 @@ class dotcms::plugin::config(
   file { "$config_plugin_path/ROOT/bin/startup.sh":
     ensure  => present,
     content => template('dotcms/startup.sh.erb'),
-    require => File["$config_plugin_path/ROOT/bin/"],
+    require => File["$config_plugin_path/ROOT/bin"],
   }
 
   file { "$config_plugin_path/ROOT/dotserver":
