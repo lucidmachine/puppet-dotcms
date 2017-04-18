@@ -17,12 +17,12 @@ class dotcms::plugin::reload{
   }
 
   exec { 'Deploying plugins':
-    command => "${dotcms::dotcms_distro_path}/bin/deploy-plugins.sh",
+    command => "${::dotcms::dotcms_distro_path}/bin/deploy-plugins.sh",
     require => Exec['Undeploying plugins']
   }
 
   exec{ 'Starting up server':
-    command => "${dotcms::dotcms_distro_path}/bin/startup.sh",
+    command => "${::dotcms::dotcms_distro_path}/bin/startup.sh",
     require => Exec['Deploying plugins']
   }
 
