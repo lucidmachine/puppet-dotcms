@@ -8,7 +8,7 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class dotcms (
-  $version       = $::dotcms::params::version,
+  $version              = $::dotcms::params::version,
 
   $service_name         = $::dotcms::params::service_name,
   $service_user         = $::dotcms::params::service_user,
