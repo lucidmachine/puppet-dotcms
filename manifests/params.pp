@@ -26,8 +26,8 @@ class dotcms::params {
 
   $postgres_host       = 'localhost'
   $postgres_port       = '5432'
-  $postgres_username   = 'ipsy'
-  $postgres_password   = 'ipsytest'
+  $postgres_username   = undef
+  $postgres_password   = undef
 
   $java_home           = '/usr/local/java'
   $java_mem_max_size   = '2G'

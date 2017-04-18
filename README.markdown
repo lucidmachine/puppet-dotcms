@@ -120,16 +120,28 @@ The path to the plugins directory of the dotCMS release under management. This d
 The path to the main configuration plugin of the dotCMS release under management. This directory is expected to be a subdirectory of [plugins_path](#plugins_path). Default is "$::dotcms::params::plugins_path/com.dotcms.config" (e.g. "/opt/dotcms/dotcms_3.7.1/plugins/com.dotcms.config").
 
 ##### `tomcat_path`
-The pat to the bundled Tomcat distribution's directory in the dotCMS release under management. This directory is expected to be a subdirectory of [server_path](#server_path). Default is "$::dotcms::params::server_path/tomcat-8.0.18" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver/tomcat-8.0.18").
+The path to the bundled Tomcat distribution's directory in the dotCMS release under management. This directory is expected to be a subdirectory of [server_path](#server_path). Default is "$::dotcms::params::server_path/tomcat-8.0.18" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver/tomcat-8.0.18").
 
 ##### `application_path`
+The path to the exploded dotCMS web application. This directory is expected to be a child of [tomcat_path](#tomcat_path). Default is "$::dotcms::params::tomcat_path/webapps/ROOT" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver/tomcat-8.0.18/webapps/ROOT").
+
 ##### `assets_target`
+The path to the assets directory of the dotCMS release under management. This directory is expected to be a child of [application_path](#application_path). Default is "$::dotcms::params::application_path/assets" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver/tomcat-8.0.18/webapps/ROOT/assets").
+
 ##### `assets_link`
+The target path for a symlink to [assets_target](#assets_target). Default is "$::dotcms::params::application_path/assets_noused" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver/tomcat-8.0.18/webapps/ROOT/assets_noused").
 
 ##### `postgres_host`
+The host of the PostgreSQL database to which dotCMS connects. Default is 'localhost'.
+
 ##### `postgres_port`
+The port through which dotCMS connects to its PostgreSQL database. Default is '5432'.
+
 ##### `postgres_username`
+The username which dotCMS uses to authenticate its connection to the PostgreSQL database. Required.
+
 ##### `postgres_password`
+The password which dotCMS uses to authenticate its connection to the PostgreSQL database. Required.
 
 ##### `java_home`
 ##### `java_mem_max_size`
