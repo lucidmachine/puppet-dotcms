@@ -19,8 +19,6 @@ class dotcms::plugin::config(
 ) {
 
   File {
-    owner  => $root_user,
-    group  => $root_group,
     ensure => directory,
   }
 
