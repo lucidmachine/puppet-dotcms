@@ -2,4 +2,5 @@
 - Update for dotCMS 3.7.1 compatibility.
 - Install manifest installs bundled dotCMS release.
 - Reorganize directory structure to mirror dotCMS release directory structure.
+- Remove clustering support.
 - Create System V init service.

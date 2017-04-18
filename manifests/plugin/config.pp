@@ -74,21 +74,5 @@ class dotcms::plugin::config(
     content => template('dotcms/ROOT.xml.erb'),
     require => File["$config_plugin_path/ROOT/dotserver/tomcat-8.0.18/conf/Catalina/localhost"]
   }
-
-  if $cluster == true {
-
-    if ! is_array($cluster_members) {
-      fail "Expect cluster_members as an array: [host1,host2,..,hostn]"
-    }
-    if ! is_array($es_unicast_hosts) {
-      fail "Expect internal ips with elastic search tcp port in an array: ['host1:port1','host2:port2',..,'hostn:portn']"
-    }
-
-    file {"${config_plugin_path}/conf/dotmarketing-config-ext.properties":
-      ensure  => present,
-      content => template('dotcms/dotmarketing-config-ext.properties.erb')
-    }
   
-  }
-
 }

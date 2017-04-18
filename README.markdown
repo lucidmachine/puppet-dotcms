@@ -144,29 +144,14 @@ The username which dotCMS uses to authenticate its connection to the PostgreSQL 
 The password which dotCMS uses to authenticate its connection to the PostgreSQL database. Required.
 
 ##### `java_home`
-##### `java_mem_max_size`
-##### `java_mem_perm_size`
+The path to the Java distribution directory. Default is '/usr/local/java'.
 
-##### `cluster`
-##### `cluster_members`
-##### `dist_idx_enabled`
-##### `dist_idx_server_id`
-##### `dist_idx_servers_ids`
-##### `cache_through_db`
-##### `cache_force_ipv4`
-##### `cache_protocol`
-##### `cache_bind_port`
-##### `cache_bind_address`
-##### `es_cluster_name`
-##### `es_network_host`
-##### `es_transp_tcp_port`
-##### `es_network_port`
-##### `es_http_enabled`
-##### `es_multicast`
-##### `es_timeout`
-##### `es_unicast_hosts`
-##### `es_replicas`
-##### `clickstream_track`
+##### `java_mem_max_size`
+The maximum heap size which the JVM running dotCMS may allocate. This is the value passed to the java flag '-Xmx'. See the [java documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BABDJJFI) for more information. Default is '2G'.
+
+##### `java_mem_perm_size`
+The maximum permanent generation space size which the JVM running dotCMS may allocate. This is the value passed to the java flag '-XX:MaxPermSize'. See the [java documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BABDJJFI) for more information. Default is '2048m'.
+
 
 ## Limitations
 
