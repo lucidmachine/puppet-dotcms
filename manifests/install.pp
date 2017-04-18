@@ -3,6 +3,21 @@
 # This class is called from dotcms for install.
 #
 class dotcms::install {
+    group { "$::dotcms::service_group":
+        ensure => present,
+    }
+
+    user { "$::dotcms::service_user":
+        ensure => present,
+        gid => "$::dotcms::service_group",
+        system => true,
+        require => Group["$::dotcms::service_group"],
+    }
+
+    File {
+        owner => "$::dotcms::params::service_user",
+        group => "$::dotcms::params::service_group",
+    }
 
     package { $::dotcms::extra_packages:
         ensure => present
