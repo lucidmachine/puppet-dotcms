@@ -120,6 +120,8 @@ The path to the plugins directory of the dotCMS release under management. This d
 The path to the main configuration plugin of the dotCMS release under management. This directory is expected to be a subdirectory of [plugins_path](#plugins_path). Default is "$::dotcms::params::plugins_path/com.dotcms.config" (e.g. "/opt/dotcms/dotcms_3.7.1/plugins/com.dotcms.config").
 
 ##### `tomcat_path`
+The pat to the bundled Tomcat distribution's directory in the dotCMS release under management. This directory is expected to be a subdirectory of [server_path](#server_path). Default is "$::dotcms::params::server_path/tomcat-8.0.18" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver/tomcat-8.0.18").
+
 ##### `application_path`
 ##### `assets_target`
 ##### `assets_link`
