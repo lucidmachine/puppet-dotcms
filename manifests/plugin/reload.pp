@@ -9,7 +9,6 @@ class dotcms::plugin::reload{
   exec { 'Shutting down server':
     command => "${::dotcms::dotcms_distro_path}/bin/shutdown.sh",
     returns => [0, 1]
-
   }
 
   exec { 'Undeploying plugins':
