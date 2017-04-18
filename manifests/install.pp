@@ -47,9 +47,15 @@ class dotcms::install {
         require => File['dotCMS Distro Archive'],
     }
 
-    exec { 'Make Scripts Executable':
+    exec { 'Make dotCMS Scripts Executable':
         cwd => "$::dotcms::params::dotcms_distro_path",
         command => "/bin/chmod 755 $::dotcms::params::dotcms_distro_path/bin/*.sh",
+        require => Exec['Extract Distro'],
+    }
+
+    exec { 'Make Tomcat Scripts Executable':
+        cwd => "$::dotcms::params::dotcms_distro_path",
+        command => "/bin/chmod 755 $::dotcms::tomcat_path/bin/*.sh",
         require => Exec['Extract Distro'],
     }
 }
