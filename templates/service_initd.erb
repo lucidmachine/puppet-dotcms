@@ -8,17 +8,17 @@
 # Description:       dotCMS init script
 
 JAVA_HOME=<%= @java_home %>
-DOTCMS_HOME=/srv/dotcms
+DOTCMS_HOME=<%= @dotcms_distro_path %>
 
 
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
-DESC="dotCMS"
+DESC="<%= @service_name %>"
 NAME=catalina.sh
 DAEMON=$DOTCMS_HOME/bin/$NAME
 DAEMON_ARGS="start"
 DOTSERVER=`echo $DOTCMS_HOME | sed -e 's/\(.*\)\///'`
-PIDFILE=/var/run/$DOTSERVER.pid
-SCRIPTNAME=/etc/init.d/dotcms
+PIDFILE=<%= @service_pid_path %>
+SCRIPTNAME=/etc/init.d/<%= @service_name %>
 
 
 # Exit if the package is not installed

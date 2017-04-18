@@ -26,12 +26,6 @@ class dotcms::config(
     require => File[$assets_target]
   }
 
-  file { "/etc/init.d/dotcmsd":
-    ensure  => present,
-    mode    => 0755,
-    content => template('dotcms/dotcms_initd.erb')
-  }
-
   file { "$::dotcms::tomcat_path/bin/setenv.sh":
     ensure  => present,
     mode    => 0755,
