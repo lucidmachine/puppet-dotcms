@@ -4,7 +4,7 @@
 # It sets variables according to platform.
 #
 class dotcms::params {
-  $version      = '3.7.1'
+  $version             = '3.7.1'
 
   $service_user        = 'dotcms'
   $service_group       = 'dotcms'
