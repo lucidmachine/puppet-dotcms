@@ -1,3 +1,5 @@
-YYYY-MM-DD Release 0.1.0
-- something you did
-- something else you did
+2017-04-18 Release 0.2.0
+- Update for dotCMS 3.7.1 compatibility.
+- Install manifest installs bundled dotCMS release.
+- Reorganize directory structure to mirror dotCMS release directory structure.
+- Create System V init service.
