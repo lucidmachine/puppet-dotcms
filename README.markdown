@@ -168,4 +168,4 @@ The maximum permanent generation space size which the JVM running dotCMS may all
 Since your module is awesome, other users will want to play with it. Let them know what the ground rules for contributing are.
 
 ## Contributors
-View the full list of contributors in [the CONTRIBUTORS file]().
+View the full list of contributors in [the CONTRIBUTORS file](https://github.com/lucidmachine/puppet-dotcms/blob/master/CONTRIBUTORS).
