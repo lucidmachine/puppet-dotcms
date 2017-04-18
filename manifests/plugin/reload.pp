@@ -1,27 +1,31 @@
-class dotcms::plugin::reload{
+class dotcms::plugin::reload (
+  $dotcms_path        = $::dotcms::dotcms_path,
+  $dotcms_distro_path = $::dotcms::dotcms_distro_path,
+) {
 
   Exec {
     path => $::path,
-    cwd  => $::dotcms::server_path,
+    cwd  => $dotcms_path,
     refreshonly => true,
   }
 
-  exec {'Shuting down server':
-    command => "${::dotcms::server_path}/bin/shutdown.sh",
+  exec { 'Shutting down server':
+    command => "${dotcms_distro_path}/bin/shutdown.sh",
+    returns => [0, 1]
   }
 
-  exec {'Undeploying plugins':
-    command => "${::dotcms::server_path}/bin/undeploy-plugins.sh",
-    require => Exec['Shuting down server']
+  exec { 'Undeploying plugins':
+    command => "${dotcms_distro_path}/bin/undeploy-plugins.sh",
+    require => Exec['Shutting down server']
   }
 
-  exec {'Deploying plugins':
-    command => "${dotcms::server_path}/bin/deploy-plugins.sh",
+  exec { 'Deploying plugins':
+    command => "${dotcms_distro_path}/bin/deploy-plugins.sh",
     require => Exec['Undeploying plugins']
   }
 
-  exec{'Starting up server':
-    command => "${dotcms::server_path}/bin/startup.sh",
+  exec{ 'Starting up server':
+    command => "${dotcms_distro_path}/bin/startup.sh",
     require => Exec['Deploying plugins']
   }
 
