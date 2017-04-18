@@ -65,59 +65,94 @@ For more configuration options, see the [Reference section](#reference).
 
 Installs and configures the dotCMS application and service.
 
-##### dotcms_version
+##### `version`
+The version number of the dotCMS release to install. Default is '3.7.1'.
 
-##### service_name
-##### service_user
-##### service_group
-##### service_path
-##### service_pid_path
+##### `service_name`
+The name of the dotCMS service used to manage the dotCMS application. Default is 'dotcms'.
 
-##### root_user
-##### root_group
+##### `service_user`
+The name of the user used to control the dotCMS application. Default is 'dotcms'.
 
-##### http_connector_port
+##### `service_group`
+The name of the group used to control the dotCMS application. Default is 'dotcms'.
 
-##### dotcms_pid_path
-##### dotcms_path
-##### dotcms_distro_path
-##### server_path
-##### plugins_path
-##### config_plugin_path
-##### tomcat_path
-##### application_path
-##### assets_target
-##### assets_link
+##### `service_path`
+Run directory for the dotCMS service. Default is '/var/run/dotcms'.
 
-##### postgres_host
-##### postgres_port
-##### postgres_username
-##### postgres_password
+##### `service_pid_path`
+Path to the dotCMS service's PID file. Default is "$::dotcms::params::service_path/dotcms.pid" (e.g. "/var/run/dotcms/dotcms.pid").
 
-##### java_home
-##### java_mem_max_size
-##### java_mem_perm_size
+##### `root_user`
+Name of the system root user. Default is 'root'.
 
-##### cluster
-##### cluster_members
-##### dist_idx_enabled
-##### dist_idx_server_id
-##### dist_idx_servers_ids
-##### cache_through_db
-##### cache_force_ipv4
-##### cache_protocol
-##### cache_bind_port
-##### cache_bind_address
-##### es_cluster_name
-##### es_network_host
-##### es_transp_tcp_port
-##### es_network_port
-##### es_http_enabled
-##### es_multicast
-##### es_timeout
-##### es_unicast_hosts
-##### es_replicas
-##### clickstream_track
+##### `root_group`
+Name of the system root group. Default is 'root'.
+
+
+##### `http_connector_port`
+The number of the port to which dotCMS' HTTP connector will be connected. Default is '8080'.
+
+##### `dotcms_pid_path`
+The path to the PID file which the dotCMS application uses to track the Java process which runs dotCMS on the bundled Tomcat server. Default is '/tmp/dotcms.pid'.
+
+##### `dotcms_path`
+The path to the dotCMS parent directory. This directory may contain multiple directories which contain versioned dotCMS releases. For example:
+
+```
+$ tree dotcms
+dotcms
+├── dotcms_3.7.1
+└── dotcms_4.0.1
+```
+Default is '/opt/dotcms'.
+
+##### `dotcms_distro_path`
+The path to the versioned dotCMS release under management. This directory is expected to be a subdirectory of [dotcms_path](#dotcms_path). Default is "$::dotcms::params::dotcms_path/dotcms_$::dotcms::params::version" (e.g. "/opt/dotcms/dotcms_3.7.1").
+
+##### `server_path`
+The path to the dotserver directory of the dotCMS release under management. This directory is expected to be a subdirectory of [dotcms_distro_path](#dotcms_distro_path). Default is "$::dotcms::params::dotcms_distro_path/dotserver" (e.g. "/opt/dotcms/dotcms_3.7.1/dotserver").
+
+##### `plugins_path`
+The path to the plugins directory of the dotCMS release under management. This directory is expected to be a subdirectory of [dotcms_distro_path](#dotcms_distro_path). Default is "$::dotcms::params::dotcms_distro_path/plugins" (e.g. "/opt/dotcms/dotcms_3.7.1/plugins").
+
+##### `config_plugin_path`
+The path to the main configuration plugin of the dotCMS release under management. This directory is expected to be a subdirectory of [plugins_path](#plugins_path). Default is "$::dotcms::params::plugins_path/com.dotcms.config" (e.g. "/opt/dotcms/dotcms_3.7.1/plugins/com.dotcms.config").
+
+##### `tomcat_path`
+##### `application_path`
+##### `assets_target`
+##### `assets_link`
+
+##### `postgres_host`
+##### `postgres_port`
+##### `postgres_username`
+##### `postgres_password`
+
+##### `java_home`
+##### `java_mem_max_size`
+##### `java_mem_perm_size`
+
+##### `cluster`
+##### `cluster_members`
+##### `dist_idx_enabled`
+##### `dist_idx_server_id`
+##### `dist_idx_servers_ids`
+##### `cache_through_db`
+##### `cache_force_ipv4`
+##### `cache_protocol`
+##### `cache_bind_port`
+##### `cache_bind_address`
+##### `es_cluster_name`
+##### `es_network_host`
+##### `es_transp_tcp_port`
+##### `es_network_port`
+##### `es_http_enabled`
+##### `es_multicast`
+##### `es_timeout`
+##### `es_unicast_hosts`
+##### `es_replicas`
+##### `clickstream_track`
 
 ## Limitations
 
