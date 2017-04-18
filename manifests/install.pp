@@ -35,15 +35,15 @@ class dotcms::install {
     }
 
     file { 'dotCMS Distro Archive':
-        path => "$::dotcms::params::dotcms_distro_path/dotcms_$::dotcms::params::dotcms_version.tar.gz",
+        path => "$::dotcms::params::dotcms_distro_path/dotcms_$::dotcms::params::version.tar.gz",
         ensure => present,
-        source => "puppet:///modules/dotcms/dotcms_$::dotcms::params::dotcms_version.tar.gz",
+        source => "puppet:///modules/dotcms/dotcms_$::dotcms::params::version.tar.gz",
         require => File['dotCMS Distro Dir'],
     }
 
     exec { 'Extract Distro':
         cwd => "$::dotcms::params::dotcms_distro_path",
-        command => "/bin/tar -xvzf $::dotcms::params::dotcms_distro_path/dotcms_$::dotcms::params::dotcms_version.tar.gz",
+        command => "/bin/tar -xvzf $::dotcms::params::dotcms_distro_path/dotcms_$::dotcms::params::version.tar.gz",
         require => File['dotCMS Distro Archive'],
     }
 
