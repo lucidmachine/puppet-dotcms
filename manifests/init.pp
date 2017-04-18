@@ -8,15 +8,21 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class dotcms (
+  $package_name         = $::dotcms::params::package_name,
   $dotcms_version       = $::dotcms::params::dotcms_version,
 
-  $package_name         = $::dotcms::params::package_name,
   $service_name         = $::dotcms::params::service_name,
+  $service_user         = $::dotcms::params::service_user,
+  $service_group        = $::dotcms::params::service_group,
+  $service_path         = $::dotcms::params::service_path,
+  $service_pid_path     = $::dotcms::params::service_pid_path,
+  
   $root_user            = $::dotcms::params::root_user,
   $root_group           = $::dotcms::params::root_group,
 
   $http_connector_port  = $::dotcms::params::http_connector_port,
 
+  $dotcms_pid_path      = $::dotcms::params::dotcms_pid_path,
   $dotcms_path          = $::dotcms::params::dotcms_path,
   $dotcms_distro_path   = $::dotcms::params::dotcms_distro_path,
   $server_path          = $::dotcms::params::server_path,
@@ -64,9 +70,7 @@ class dotcms (
   class { '::dotcms::install': } ->
   class { '::dotcms::config': } ~>
   class { '::dotcms::reindex': } ->
-  class { '::dotcms::restart': } ->
   class { '::dotcms::plugin': } ->
-  # We would like to create a service in the future instead of a restart class:
-  # class { '::dotcms::service': } ->
+  class { '::dotcms::service': } ->
   Class['::dotcms']
 }
